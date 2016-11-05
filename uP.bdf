@@ -20,6 +20,22 @@ authorized distributors.  Please refer to the applicable
 agreement for further details.
 */
 (header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 184 -16 352 0)
+	(text "INPUT" (rect 125 0 166 11)(font "Arial" (font_size 6)))
+	(text "CLK" (rect 5 0 30 14)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 18)(font "Arial" (font_size 6)))
+)
 (symbol
 	(rect 192 312 408 440)
 	(text "uP_PEM" (rect 82 0 159 18)(font "Arial" (font_size 10)))
@@ -983,6 +999,31 @@ agreement for further details.
 		(circle (rect 31 12 39 20))
 	)
 )
+(symbol
+	(rect 712 960 760 992)
+	(text "NOT" (rect 1 0 25 11)(font "Arial" (font_size 6)))
+	(text "inst2" (rect 3 21 44 35)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 21)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 21)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 21)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 21)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
 (connector
 	(pt 152 328)
 	(pt 152 360)
@@ -990,15 +1031,6 @@ agreement for further details.
 (connector
 	(pt 152 360)
 	(pt 192 360)
-)
-(connector
-	(pt 96 376)
-	(pt 192 376)
-	(bus)
-)
-(connector
-	(pt 96 424)
-	(pt 192 424)
 )
 (connector
 	(pt 408 120)
@@ -1128,38 +1160,6 @@ agreement for further details.
 (connector
 	(pt 256 656)
 	(pt 312 656)
-)
-(connector
-	(pt 784 152)
-	(pt 736 152)
-)
-(connector
-	(pt 784 168)
-	(pt 736 168)
-)
-(connector
-	(pt 784 184)
-	(pt 736 184)
-)
-(connector
-	(pt 784 200)
-	(pt 736 200)
-)
-(connector
-	(pt 784 216)
-	(pt 736 216)
-)
-(connector
-	(pt 784 232)
-	(pt 736 232)
-)
-(connector
-	(pt 784 248)
-	(pt 736 248)
-)
-(connector
-	(pt 784 136)
-	(pt 736 136)
 )
 (connector
 	(pt 536 344)
@@ -1368,71 +1368,39 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 936 416)
-	(pt 992 416)
-)
-(connector
 	(pt 992 352)
 	(pt 992 416)
 	(bus)
 )
 (connector
-	(pt 936 432)
-	(pt 992 432)
-)
-(connector
 	(pt 992 416)
 	(pt 992 432)
 	(bus)
 )
 (connector
-	(pt 936 448)
-	(pt 992 448)
-)
-(connector
 	(pt 992 432)
 	(pt 992 448)
 	(bus)
 )
 (connector
-	(pt 936 464)
-	(pt 992 464)
-)
-(connector
 	(pt 992 448)
 	(pt 992 464)
 	(bus)
 )
 (connector
-	(pt 936 480)
-	(pt 992 480)
-)
-(connector
 	(pt 992 464)
 	(pt 992 480)
 	(bus)
 )
 (connector
-	(pt 936 496)
-	(pt 992 496)
-)
-(connector
 	(pt 992 480)
 	(pt 992 496)
 	(bus)
 )
 (connector
-	(pt 936 512)
-	(pt 992 512)
-)
-(connector
 	(pt 992 496)
 	(pt 992 512)
 	(bus)
-)
-(connector
-	(pt 936 528)
-	(pt 992 528)
 )
 (connector
 	(pt 992 512)
@@ -1717,38 +1685,6 @@ agreement for further details.
 	(pt 744 512)
 )
 (connector
-	(pt 784 848)
-	(pt 824 848)
-)
-(connector
-	(pt 784 864)
-	(pt 824 864)
-)
-(connector
-	(pt 784 880)
-	(pt 824 880)
-)
-(connector
-	(pt 784 896)
-	(pt 824 896)
-)
-(connector
-	(pt 784 912)
-	(pt 824 912)
-)
-(connector
-	(pt 784 928)
-	(pt 824 928)
-)
-(connector
-	(pt 784 944)
-	(pt 824 944)
-)
-(connector
-	(pt 784 960)
-	(pt 824 960)
-)
-(connector
 	(text "CLK" (rect 786 976 810 990)(font "Arial" ))
 	(pt 824 992)
 	(pt 776 992)
@@ -1906,8 +1842,149 @@ agreement for further details.
 	(pt 816 432)
 )
 (connector
+	(text "Wbus[0]" (rect 946 400 1003 414)(font "Arial" ))
+	(pt 936 416)
+	(pt 992 416)
+)
+(connector
+	(text "Wbus[1]" (rect 946 416 1003 430)(font "Arial" ))
+	(pt 936 432)
+	(pt 992 432)
+)
+(connector
+	(text "Wbus[2]" (rect 946 432 1003 446)(font "Arial" ))
+	(pt 936 448)
+	(pt 992 448)
+)
+(connector
+	(text "Wbus[3]" (rect 946 448 1003 462)(font "Arial" ))
+	(pt 936 464)
+	(pt 992 464)
+)
+(connector
+	(text "Wbus[4]" (rect 946 464 1003 478)(font "Arial" ))
+	(pt 936 480)
+	(pt 992 480)
+)
+(connector
+	(text "Wbus[5]" (rect 946 480 1003 494)(font "Arial" ))
+	(pt 936 496)
+	(pt 992 496)
+)
+(connector
+	(text "Wbus[6]" (rect 946 496 1003 510)(font "Arial" ))
+	(pt 936 512)
+	(pt 992 512)
+)
+(connector
+	(text "Wbus[7]" (rect 946 512 1003 526)(font "Arial" ))
+	(pt 936 528)
+	(pt 992 528)
+)
+(connector
+	(text "Wbus[0]" (rect 784 832 841 846)(font "Arial" ))
+	(pt 784 848)
+	(pt 824 848)
+)
+(connector
+	(text "Wbus[2]" (rect 784 864 841 878)(font "Arial" ))
+	(pt 784 880)
+	(pt 824 880)
+)
+(connector
+	(text "Wbus[1]" (rect 794 848 851 862)(font "Arial" ))
+	(pt 784 864)
+	(pt 824 864)
+)
+(connector
+	(text "Wbus[3]" (rect 784 880 841 894)(font "Arial" ))
+	(pt 784 896)
+	(pt 824 896)
+)
+(connector
+	(text "Wbus[4]" (rect 784 896 841 910)(font "Arial" ))
+	(pt 784 912)
+	(pt 824 912)
+)
+(connector
+	(text "Wbus[5]" (rect 784 912 841 926)(font "Arial" ))
+	(pt 784 928)
+	(pt 824 928)
+)
+(connector
+	(text "Wbus[6]" (rect 784 928 841 942)(font "Arial" ))
+	(pt 784 944)
+	(pt 824 944)
+)
+(connector
+	(text "Wbus[7]" (rect 784 944 841 958)(font "Arial" ))
+	(pt 784 960)
+	(pt 824 960)
+)
+(connector
+	(text "Wbus[0]" (rect 736 120 793 134)(font "Arial" ))
+	(pt 784 136)
+	(pt 736 136)
+)
+(connector
+	(text "Wbus[1]" (rect 736 136 793 150)(font "Arial" ))
+	(pt 784 152)
+	(pt 736 152)
+)
+(connector
+	(text "Wbus[2]" (rect 736 152 793 166)(font "Arial" ))
+	(pt 784 168)
+	(pt 736 168)
+)
+(connector
+	(text "Wbus[3]" (rect 736 168 793 182)(font "Arial" ))
+	(pt 784 184)
+	(pt 736 184)
+)
+(connector
+	(text "Wbus[4]" (rect 736 184 793 198)(font "Arial" ))
+	(pt 784 200)
+	(pt 736 200)
+)
+(connector
+	(text "Wbus[5]" (rect 736 200 793 214)(font "Arial" ))
+	(pt 784 216)
+	(pt 736 216)
+)
+(connector
+	(text "Wbus[6]" (rect 736 216 793 230)(font "Arial" ))
+	(pt 784 232)
+	(pt 736 232)
+)
+(connector
+	(text "Wbus[7]" (rect 736 232 793 246)(font "Arial" ))
+	(pt 784 248)
+	(pt 736 248)
+)
+(connector
+	(text "<<__$DEF_ALIAS237>>" (rect 362 -24 518 -10)(font "Arial" )(invisible))
+	(pt 352 -8)
+	(pt 384 -8)
+)
+(connector
+	(pt 760 976)
 	(pt 824 976)
-	(pt 736 976)
+)
+(connector
+	(text "LB" (rect 674 952 690 966)(font "Arial" ))
+	(pt 712 976)
+	(pt 664 976)
+)
+(connector
+	(text "Wbus[4..7]" (rect 82 360 164 374)(font "Arial" ))
+	(pt 72 376)
+	(pt 192 376)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 106 408 130 422)(font "Arial" ))
+	(pt 96 424)
+	(pt 192 424)
 )
 (junction (pt 632 544))
 (junction (pt 208 544))
